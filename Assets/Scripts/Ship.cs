@@ -40,7 +40,7 @@ public class Ship : MonoBehaviour
         if (timer >= 0.25f)
         {
             timer = 0;
-            aud.PlayOneShot(weapon); // Weapon shooting audio
+            aud.PlayOneShot(weapon, 0.25f); // Weapon shooting audio
             GameObject bullet = Instantiate(bulletPrefab, pos, Quaternion.identity);
             bullets.Enqueue(bullet);
             bullet.GetComponent<Rigidbody2D>().AddForce(bulletSpeed * Force);
